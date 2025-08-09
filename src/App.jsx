@@ -9,7 +9,7 @@ function App() {
       <div className="rain"></div>
       <div className="owl-symbol"></div>
       <div className="bat-signal">
-        <img src="/batman svg.webp" alt="Batman Logo" className="batman-logo" style={{
+        <img src="/ahmed_apology/batman svg.webp" alt="Batman Logo" className="batman-logo" style={{
           position:'absolute',
           top:'50%',
           left:'50%',
@@ -23,22 +23,22 @@ function App() {
       {/* Comic panel layout */}
       <div className="comic-panels">
         <div className="comic-panel">
-          <img src="/1.jpeg" alt="4th September" className="panel-image" />
+          <img src="/ahmed_apology/1.jpeg" alt="4th September" className="panel-image" />
           <div className="panel-title">4th September</div>
           <div className="panel-caption">A special day that marked the beginning of our story together.</div>
         </div>
         <div className="comic-panel">
-          <img src="/2.jpeg" alt="The Shirt" className="panel-image" />
+          <img src="/ahmed_apology/2.jpeg" alt="The Shirt" className="panel-image" />
           <div className="panel-title">Your Gift</div>
           <div className="panel-caption">The shirt you gave me - a symbol of your love and care.</div>
         </div>
         <div className="comic-panel">
-          <img src="/3.jpeg" alt="Future Memories" className="panel-image" />
+          <img src="/ahmed_apology/3.jpeg" alt="Future Memories" className="panel-image" />
           <div className="panel-title">Future Legacy</div>
           <div className="panel-caption">Precious moments I will share with our children someday.</div>
         </div>
         <div className="comic-panel">
-          <img src="/4.jpeg" alt="Modeltown Park" className="panel-image" />
+          <img src="/ahmed_apology/4.jpeg" alt="Modeltown Park" className="panel-image" />
           <div className="panel-title">Modeltown Park</div>
           <div className="panel-caption">Our adventure together in the park - laughter and love.</div>
         </div>
@@ -49,7 +49,7 @@ function App() {
           
           {/* Batman SVG Logo */}
           <div className="batman-header-logo">
-            <img src="/batman svg.webp" alt="Batman Logo" style={{
+            <img src="/ahmed_apology/batman svg.webp" alt="Batman Logo" style={{
               width: '200px',
               height: 'auto',
               filter: 'drop-shadow(0 0 20px #d4af37)',
@@ -67,7 +67,7 @@ function App() {
           {/* Background Music */}
           <div className="music-player">
             <audio controls loop className="background-music">
-              <source src="/Nirvana - Something In The Way (Audio).mp3" type="audio/mpeg"/>
+              <source src="/ahmed_apology/Nirvana - Something In The Way (Audio).mp3" type="audio/mpeg"/>
               Your browser does not support the audio element.
             </audio>
             <p className="music-label">🎵 "Something in the Way" - Nirvana 🎵</p>

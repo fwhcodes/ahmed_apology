@@ -8,37 +8,37 @@ const ImageCarousel = () => {
   // Placeholder images - you can replace these with your actual images
   const images = [
     {
-      src: '/1.jpeg',
+      src: '/ahmed_apology/1.jpeg',
       alt: 'Gotham at Night',
       caption: '4th september.'
     },
     {
-      src: '/2.jpeg',
+      src: '/ahmed_apology/2.jpeg',
       alt: 'Catwoman Silhouette',
       caption: 'Shirt you gave me heheh'
     },
     {
-      src: '/3.jpeg',
+      src: '/ahmed_apology/3.jpeg',
       alt: 'Court of Owls',
       caption: 'I will show this to our kids.'
     },
     {
-      src: '/4.jpeg',
+      src: '/ahmed_apology/4.jpeg',
       alt: 'Batman and Catwoman',
       caption: 'Modeltown park adventure.'
     },
     {
-      src: '/5.jpeg',
+      src: '/ahmed_apology/5.jpeg',
       alt: 'Gotham Rooftops',
       caption: 'Qawali night.'
     },
     {
-      src: '/6.jpeg',
+      src: '/ahmed_apology/6.jpeg',
       alt: 'Bat Signal',
       caption: 'NCA date heheheh.'
     },
     {
-      src: '/7.jpeg',
+      src: '/ahmed_apology/7.jpeg',
       alt: 'Catwoman Apology',
       caption: 'From Catwoman: I am sorry for neglecting my little baby. I will pay more attention.'
     }
@@ -94,7 +94,7 @@ const ImageCarousel = () => {
               }}
             />
             <div className="image-overlay">
-              <img src="/batman svg.webp" alt="Batman Logo" style={{
+              <img src="/ahmed_apology/batman svg.webp" alt="Batman Logo" style={{
                 position: 'absolute',
                 bottom: '20px',
                 right: '20px',
