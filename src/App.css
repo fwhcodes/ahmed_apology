@@ -1,0 +1,552 @@
+.comic-panel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background: url('/Court-of-Owls-labyrinth.jpg') center center/cover no-repeat;
+  filter: grayscale(0.2) contrast(1.2) blur(1px) drop-shadow(0 0 24px #d4af37);
+}
+
+.comic-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: start;
+  margin: 3rem 0;
+  z-index: 3;
+  position: relative;
+}
+
+.comic-panel {
+  background: #181820;
+  border: 5px solid #d4af37;
+  box-shadow: 
+    0 0 30px rgba(212, 175, 55, 0.3),
+    0 0 15px rgba(26, 26, 46, 0.8) inset,
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  min-height: 450px;
+  position: relative;
+  transition: all 0.3s ease;
+  transform: rotate(-1deg);
+  margin: 0 auto;
+}
+
+.comic-panel:nth-child(2n) {
+  transform: rotate(1deg);
+}
+
+.comic-panel:hover {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 
+    0 0 50px rgba(212, 175, 55, 0.6),
+    0 0 25px rgba(139, 90, 140, 0.4) inset,
+    8px 8px 25px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.panel-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 3px solid #8b5a8c;
+  filter: grayscale(0.1) contrast(1.2) sepia(0.1) drop-shadow(0 0 10px #4a0e4e);
+  position: relative;
+}
+
+.panel-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(212, 175, 55, 0.1) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.panel-caption {
+  padding: 1.2rem;
+  color: #c9a96e;
+  font-family: 'Comic Sans MS', 'Bangers', 'Impact', 'Arial Black', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-shadow: 2px 2px 4px #1a1a2e;
+  background: linear-gradient(135deg, #181820 70%, #4a0e4e 100%);
+  border-radius: 0 0 15px 15px;
+  border-top: 2px solid rgba(139, 90, 140, 0.3);
+}
+
+.panel-title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #d4af37, #c9a96e);
+  color: #181820;
+  font-family: 'Comic Sans MS', 'Bangers', 'Impact', 'Arial Black', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 15px rgba(212, 175, 55, 0.8),
+    2px 2px 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
+  transform: rotate(-2deg);
+}
+.comic-art {
+  opacity: 0.35 !important;
+  filter: drop-shadow(0 0 24px #d4af37) contrast(1.2) grayscale(0.2);
+  mix-blend-mode: lighten;
+  transition: opacity 0.3s, filter 0.3s;
+}
+.comic-art:hover {
+  opacity: 0.6 !important;
+  filter: drop-shadow(0 0 48px #d4af37) contrast(1.4) grayscale(0);
+}
+.owl-caption {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d4af37;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #1a1a2e;
+  opacity: 0.8;
+}
+/* Gotham-inspired App Styles */
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2d1b38 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large Background Bat Signal */
+.app::after {
+  content: '';
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 320' fill='none'%3E%3Cpath d='M20 280 Q80 180 160 180 Q180 100 320 20 Q460 100 480 180 Q560 180 620 280 Q540 260 480 220 Q440 280 320 280 Q200 280 160 220 Q100 260 20 280 Z' fill='%23d4af37' opacity='0.05' stroke='%23d4af37' stroke-width='3' opacity='0.1'/%3E%3Cellipse cx='320' cy='180' rx='60' ry='30' fill='%23000' opacity='0.1'/%3E%3C/svg%3E") center/contain no-repeat;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.15;
+  animation: batSignalGlow 8s ease-in-out infinite;
+}
+
+/* Gotham City Skyline */
+.app::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'%3E%3Cpath d='M0,400 L0,320 L40,320 L40,280 L80,280 L80,300 L120,300 L120,250 L160,250 L160,270 L200,270 L200,220 L240,220 L240,200 L280,200 L280,180 L320,180 L320,160 L360,160 L360,140 L400,140 L400,120 L440,120 L440,100 L480,100 L480,80 L520,80 L520,60 L560,60 L560,40 L600,40 L600,60 L640,60 L640,80 L680,80 L680,100 L720,100 L720,120 L760,120 L760,140 L800,140 L800,160 L840,160 L840,180 L880,180 L880,200 L920,200 L920,220 L960,220 L960,240 L1000,240 L1000,260 L1040,260 L1040,280 L1080,280 L1080,300 L1120,300 L1120,320 L1160,320 L1160,340 L1200,340 L1200,400 Z' fill='%23000'/%3E%3C/svg%3E") bottom center/cover no-repeat;
+  z-index: -2;
+  opacity: 0.8;
+  animation: buildingPulse 8s ease-in-out infinite;
+}
+
+@keyframes buildingPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes batSignalGlow {
+  0%, 100% { 
+    opacity: 0.08;
+    transform: translateX(-50%) scale(1);
+  }
+  50% { 
+    opacity: 0.15;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+/* Animated Rain Effect */
+.rain {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.rain::before,
+.rain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg%3E%3Cline x1='20' y1='0' x2='18' y2='100' stroke='%23ffffff' stroke-width='0.5' opacity='0.3'/%3E%3Cline x1='40' y1='0' x2='38' y2='100' stroke='%23ffffff' stroke-width='0.3' opacity='0.2'/%3E%3Cline x1='60' y1='0' x2='58' y2='100' stroke='%23ffffff' stroke-width='0.4' opacity='0.25'/%3E%3Cline x1='80' y1='0' x2='78' y2='100' stroke='%23ffffff' stroke-width='0.2' opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+  animation: rain-fall 1s linear infinite;
+}
+
+.rain::after {
+  animation-delay: -0.5s;
+  animation-duration: 1.2s;
+}
+
+@keyframes rain-fall {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(calc(100vh + 100px)); }
+}
+
+/* Court of Owls Owl Symbol */
+.owl-symbol {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 C30 10 15 25 15 45 C15 55 20 64 28 70 L35 65 C40 62 45 60 50 60 C55 60 60 62 65 65 L72 70 C80 64 85 55 85 45 C85 25 70 10 50 10 Z M35 35 C35 30 39 26 44 26 C49 26 53 30 53 35 C53 40 49 44 44 44 C39 44 35 40 35 35 Z M47 35 C47 30 51 26 56 26 C61 26 65 30 65 35 C65 40 61 44 56 44 C51 44 47 40 47 35 Z M50 75 L45 85 L55 85 Z' fill='%23d4af37' opacity='0.6'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation: owlGlow 3s ease-in-out infinite;
+  z-index: 1000;
+}
+
+@keyframes owlGlow {
+  0%, 100% { 
+    opacity: 0.6;
+    filter: drop-shadow(0 0 5px #d4af37);
+  }
+  50% { 
+    opacity: 0.9;
+    filter: drop-shadow(0 0 15px #d4af37);
+  }
+}
+
+/* Bat Signal in the Sky */
+.bat-signal {
+  position: fixed;
+  top: 10%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 40%, transparent 70%);
+  border-radius: 50%;
+  z-index: 10;
+  animation: batSignalPulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.batman-logo {
+  filter: drop-shadow(0 0 12px #d4af37);
+  transition: filter 0.3s;
+}
+.batman-logo:hover {
+  filter: drop-shadow(0 0 24px #d4af37);
+}
+
+/* Court of Owls mask overlay */
+.court-owl-mask {
+  position: fixed;
+  left: 10%;
+  top: 20%;
+  width: 90px;
+  height: 90px;
+  z-index: 1001;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.court-owl-mask svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px #d4af37);
+}
+
+/* Additional Gotham Theme Enhancements */
+.gotham-title {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #d4af37, #8b5a8c, #d4af37);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1rem;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.subtitle {
+  color: #c9a96e;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Content container */
+.content-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Catwoman Header */
+.catwoman-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.batman-header-logo {
+  margin-bottom: 2rem;
+  animation: logoGlow 4s ease-in-out infinite;
+}
+
+.batman-header-logo svg {
+  filter: drop-shadow(0 0 20px #d4af37);
+  transition: all 0.3s ease;
+}
+
+.batman-header-logo:hover svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 30px #d4af37);
+}
+
+@keyframes logoGlow {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.background-music {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.background-music::-webkit-media-controls-panel {
+  background-color: #1a1a2e;
+}
+
+.music-player {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.music-label {
+  color: #d4af37;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  font-style: italic;
+}
+
+.cat-ears {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+  background: #8b5a8c;
+  clip-path: polygon(0% 100%, 40% 0%, 60% 0%, 100% 100%);
+  animation: earTwitch 2s ease-in-out infinite;
+}
+
+@keyframes earTwitch {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(-5deg); }
+  75% { transform: translateX(-50%) rotate(5deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes eyeGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.9);
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 5;
+}
+
+.gotham-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  border-top: 2px solid rgba(139, 90, 140, 0.3);
+  color: #c9a96e;
+}
+
+.owl-eyes {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  animation: blinkOwl 3s ease-in-out infinite;
+}
+
+@keyframes blinkOwl {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.3; }
+}
+
+.court-quote {
+  font-style: italic;
+  color: #8b5a8c;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Remove duplicate sections - keeping only one */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comic-panels {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .comic-panel {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+  
+  .comic-panel:nth-child(2n) {
+    transform: rotate(0deg);
+  }
+  
+  .content-container {
+    padding: 1rem;
+  }
+  
+  .gotham-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .bat-signal {
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .catwoman-header {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .court-owl-mask {
+    width: 60px;
+    height: 60px;
+    left: 2%;
+    top: 10%;
+  }
+  
+  .app::after {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gotham-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .bat-signal {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .app::after {
+    width: 300px;
+    height: 150px;
+  }
+  
+  .panel-title {
+    font-size: 1rem;
+    padding: 0.3em 0.6em;
+  }
+  
+  .panel-caption {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Global animations and effects */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0a0a0f;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5a8c, #4a0e4e);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #d4af37, #c9a96e);
+}
